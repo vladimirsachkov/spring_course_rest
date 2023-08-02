@@ -24,7 +24,7 @@ public class MyConfig {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         try {
             dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
-            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/my_db_l_2?useSSL=false&amp;serverTimezone=UTC");
+            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/my_db_l_2?useSSL=false&serverTimezone=UTC");
             dataSource.setUser("bestuser");
             dataSource.setPassword("bestuser");
         } catch (PropertyVetoException e) {
@@ -55,7 +55,7 @@ public class MyConfig {
         HibernateTransactionManager transactionManager =
                 new HibernateTransactionManager();
 
-        transactionManager().setSessionFactory(sessionFactory().getObject());
+        transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
     }
 }
